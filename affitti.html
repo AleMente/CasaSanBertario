@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CASA San Bertario — Affitti transitori a Cassino | 1–18 mesi, tutto incluso</title>
+<meta name="description" content="Appartamento di pregio in centro a Cassino: due suite con bagno privato, arredate, tutto incluso. Affitti da 1 a 18 mesi per studenti, ricercatori, professionisti in trasferta.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CASA San Bertario — Affitti transitori a Cassino">
+<meta property="og:description" content="Due suite con bagno privato in centro a Cassino. Arredate, tutto incluso, da 1 a 18 mesi. Da 550 €/mese.">
+<meta property="og:image" content="https://i.ibb.co/Ps6Q1sJ9/Cucina.jpg">
+<meta property="og:url" content="https://casa.sanbertario.it/affitti.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://casa.sanbertario.it/affitti.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ══ TOKENS ══ colori presi dai materiali reali dell'appartamento ══ */
+:root{
+  --ink:#171A1E;        /* grafite dei telai in ferro */
+  --ink-soft:#3A4046;
+  --slate:#5F666D;
+  --bone:#F4F2ED;       /* bianco Calacatta / pareti */
+  --bone-2:#EAE6DE;
+  --oak:#C39A6B;        /* rovere del pavimento */
+  --sage:#7E8F79;       /* parete camera 1 */
+  --clay:#B98C74;       /* parete camera 2 */
+  --line:#D6D1C7;
+  --white:#FFFFFF;
+
+  --d:'Fraunces',Georgia,serif;
+  --b:'Instrument Sans',system-ui,sans-serif;
+  --m:'Space Grotesk',ui-monospace,monospace;
+
+  --pad:clamp(1.25rem,4vw,4rem);
+  --mull:1px;           /* spessore montante */
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bone);color:var(--ink);
+  font-family:var(--b);font-size:16px;line-height:1.62;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.wrap{max-width:1220px;margin:0 auto;padding-inline:var(--pad)}
+
+/* ── tipografia ─────────────────────────────────────────────── */
+.eyebrow{
+  font-family:var(--m);font-size:.6875rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--slate);
+}
+.h-xl{font-family:var(--d);font-weight:300;font-size:clamp(2.6rem,7vw,5rem);
+      line-height:.98;letter-spacing:-.022em}
+.h-lg{font-family:var(--d);font-weight:300;font-size:clamp(1.9rem,4.2vw,3rem);
+      line-height:1.08;letter-spacing:-.018em}
+.h-md{font-family:var(--d);font-weight:400;font-size:clamp(1.25rem,2.2vw,1.6rem);
+      line-height:1.2;letter-spacing:-.01em}
+.lede{font-size:clamp(1.02rem,1.5vw,1.18rem);color:var(--ink-soft);max-width:56ch}
+.small{font-size:.875rem;color:var(--slate)}
+.tiny{font-size:.78rem;color:var(--slate);line-height:1.5}
+.num{font-family:var(--m);font-weight:500;font-variant-numeric:tabular-nums}
+
+/* ── firma: il montante (mullion) ───────────────────────────── */
+.mullion{
+  border-top:var(--mull) solid var(--line);
+  position:relative;height:0;
+}
+.mullion::before,.mullion::after{
+  content:"";position:absolute;top:0;width:var(--mull);height:9px;background:var(--line);
+}
+.mullion::before{left:22%} .mullion::after{left:61%}
+
+/* ── nav ────────────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:60;background:rgba(244,242,237,.93);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:1rem;padding-block:.85rem}
+.mark{font-family:var(--d);font-weight:400;font-size:1.02rem;letter-spacing:-.01em;
+      text-decoration:none;line-height:1.15}
+.mark span{display:block;font-family:var(--m);font-size:.58rem;letter-spacing:.2em;
+           text-transform:uppercase;color:var(--slate);margin-top:.15rem}
+.nav-sp{flex:1}
+.langs{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.langs button{
+  font-family:var(--m);font-size:.68rem;letter-spacing:.1em;padding:.42rem .6rem;
+  background:transparent;border:0;cursor:pointer;color:var(--slate);
+}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--bone)}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;font-family:var(--b);font-weight:500;
+  font-size:.86rem;padding:.62rem 1.05rem;border-radius:2px;text-decoration:none;
+  border:1px solid var(--ink);background:var(--ink);color:var(--bone);
+  cursor:pointer;transition:opacity .18s;
+}
+.btn:hover{opacity:.86}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-sage{background:var(--sage);border-color:var(--sage);color:var(--white)}
+.btn-sm{font-size:.8rem;padding:.5rem .85rem}
+
+/* ── hero: la vetrata ───────────────────────────────────────── */
+.hero{padding-top:clamp(2rem,5vw,3.5rem);padding-bottom:clamp(2rem,4vw,3rem)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:end}
+.glazing{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bone-2)}
+.glazing img{width:100%;height:100%;object-fit:cover}
+.panes{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);
+       grid-template-rows:.62fr 1fr;pointer-events:none}
+.pane{border:3px solid var(--ink);margin:-1.5px;opacity:0;
+      background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,0) 55%)}
+.hero-copy{padding-bottom:.4rem}
+.hero-copy .h-xl{margin:.7rem 0 .9rem}
+.hero-copy .h-xl em{font-style:normal;color:var(--sage)}
+.stay{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.4rem}
+.stay li{list-style:none;font-family:var(--m);font-size:.72rem;letter-spacing:.06em;
+         border:1px solid var(--line);padding:.3rem .6rem;color:var(--ink-soft)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+
+/* ── sezioni ────────────────────────────────────────────────── */
+.sec{padding-block:clamp(3rem,7vw,5.5rem)}
+.sec-head{max-width:62ch;margin-bottom:clamp(1.6rem,3vw,2.4rem)}
+.sec-head .h-lg{margin:.55rem 0 .7rem}
+
+/* ── tre opzioni ────────────────────────────────────────────── */
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+      border:1px solid var(--line)}
+.opt{background:var(--bone);padding:0;display:flex;flex-direction:column}
+.opt-img{aspect-ratio:4/3;overflow:hidden;background:var(--bone-2)}
+.opt-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.opt:hover .opt-img img{transform:scale(1.035)}
+.opt-body{padding:1.25rem 1.15rem 1.35rem;display:flex;flex-direction:column;flex:1;gap:.55rem}
+.opt-tag{font-family:var(--m);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase}
+.opt--suite .opt-tag{color:var(--sage)}
+.opt--room  .opt-tag{color:var(--clay)}
+.opt--flat  .opt-tag{color:var(--oak)}
+.opt-price{font-family:var(--d);font-weight:400;font-size:2.1rem;line-height:1;letter-spacing:-.02em}
+.opt-price small{font-family:var(--b);font-size:.78rem;font-weight:400;color:var(--slate);
+                 letter-spacing:0;margin-left:.25rem}
+.opt ul{list-style:none;display:flex;flex-direction:column;gap:.3rem;margin-top:.2rem}
+.opt li{font-size:.875rem;color:var(--ink-soft);padding-left:1rem;position:relative}
+.opt li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--line)}
+.opt .btn{margin-top:auto;align-self:flex-start}
+
+/* ── strip incluso ──────────────────────────────────────────── */
+.incl{background:var(--ink);color:var(--bone)}
+.incl .eyebrow{color:var(--oak)}
+.incl-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(244,242,237,.14);
+           margin-top:1.6rem;border:1px solid rgba(244,242,237,.14)}
+.incl-item{background:var(--ink);padding:1.1rem .85rem;display:flex;flex-direction:column;gap:.5rem}
+.incl-item svg{width:22px;height:22px;stroke:var(--oak);fill:none;stroke-width:1.4}
+.incl-item span{font-size:.83rem;line-height:1.35}
+.incl-note{margin-top:1.1rem;font-size:.85rem;color:rgba(244,242,237,.78)}
+
+/* ── materiali ──────────────────────────────────────────────── */
+.mats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 1.75rem;margin-top:.6rem}
+.mat{display:flex;gap:.85rem;align-items:flex-start}
+.sw{width:34px;height:34px;flex:none;border-radius:1px;border:1px solid var(--line)}
+.mat h4{font-family:var(--b);font-weight:600;font-size:.92rem;margin-bottom:.15rem}
+.mat p{font-size:.84rem;color:var(--slate);line-height:1.5}
+
+/* ── galleria ───────────────────────────────────────────────── */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+     border:1px solid var(--line)}
+.gal figure{position:relative;overflow:hidden;background:var(--bone-2);aspect-ratio:1;
+            margin:0;cursor:zoom-in}
+.gal figure.tall{grid-row:span 2;aspect-ratio:1/2.005}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figcaption{position:absolute;left:0;bottom:0;font-family:var(--m);font-size:.62rem;
+  letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--bone);
+  padding:.3rem .55rem}
+
+/* ── planimetria ────────────────────────────────────────────── */
+.plan{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.plan-img{background:var(--white);border:1px solid var(--line);padding:1.25rem;cursor:zoom-in}
+.specs{list-style:none;border-top:1px solid var(--line)}
+.specs li{display:flex;justify-content:space-between;gap:1rem;padding:.72rem 0;
+          border-bottom:1px solid var(--line);font-size:.9rem}
+.specs li>span:first-child{color:var(--slate)}
+.specs .num{font-size:.9rem}
+
+/* ── profili ────────────────────────────────────────────────── */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.who article{border-top:2px solid var(--ink);padding-top:.9rem}
+.who h4{font-family:var(--d);font-weight:400;font-size:1.12rem;margin-bottom:.35rem}
+.who p{font-size:.86rem;color:var(--slate);line-height:1.55}
+
+/* ── distanze ───────────────────────────────────────────────── */
+.dist{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+      border:1px solid var(--line)}
+.dist div{background:var(--bone);padding:1.15rem 1rem}
+.dist .num{display:block;font-family:var(--d);font-size:1.65rem;font-weight:400;line-height:1;
+           letter-spacing:-.02em;margin-bottom:.3rem}
+.dist span{font-size:.83rem;color:var(--slate)}
+
+/* ── passi (sequenza reale, quindi numerati) ────────────────── */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+       border:1px solid var(--line)}
+.step{background:var(--bone);padding:1.3rem 1.15rem}
+.step .num{font-size:.72rem;letter-spacing:.14em;color:var(--oak);display:block;margin-bottom:.6rem}
+.step h4{font-family:var(--b);font-weight:600;font-size:.95rem;margin-bottom:.3rem}
+.step p{font-size:.85rem;color:var(--slate);line-height:1.5}
+
+/* ── faq ────────────────────────────────────────────────────── */
+.faq{border-top:1px solid var(--line);max-width:none}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:1.05rem 2.4rem 1.05rem 0;position:relative;
+  font-family:var(--b);font-weight:500;font-size:1rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:.45rem;top:1.55rem;width:11px;height:11px;
+  border-right:1.5px solid var(--slate);border-bottom:1.5px solid var(--slate);
+  transform:rotate(45deg);transition:transform .22s;
+}
+.faq details[open] summary::after{transform:rotate(-135deg);top:1.75rem}
+.faq p{padding:0 2rem 1.15rem 0;font-size:.92rem;color:var(--ink-soft);max-width:70ch}
+
+/* ── form ───────────────────────────────────────────────────── */
+.ask{background:var(--sage-ink);color:var(--white)}
+.ask .eyebrow{color:rgba(255,255,255,.82)}
+.ask-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.75rem,4vw,3.5rem);align-items:start}
+.ask a{color:var(--white)}
+.direct{margin-top:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+.direct a{display:flex;align-items:center;gap:.65rem;text-decoration:none;font-size:1.02rem}
+.direct svg{width:19px;height:19px;stroke:rgba(255,255,255,.9);fill:none;stroke-width:1.5;flex:none}
+.form{background:var(--bone);color:var(--ink);padding:clamp(1.25rem,3vw,2rem)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.field{display:flex;flex-direction:column;gap:.32rem;margin-bottom:.85rem}
+.field label{font-family:var(--m);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate)}
+.field input,.field select,.field textarea{
+  font-family:var(--b);font-size:.94rem;padding:.62rem .7rem;border:1px solid var(--line);
+  border-radius:2px;background:var(--white);color:var(--ink);width:100%;
+}
+.field textarea{resize:vertical;min-height:76px}
+.send{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.35rem}
+.send .btn{flex:1;justify-content:center;min-width:150px}
+.form-note{margin-top:.8rem;font-size:.76rem;color:var(--slate);line-height:1.5}
+
+/* ── footer ─────────────────────────────────────────────────── */
+.foot{padding-block:2.4rem;border-top:1px solid var(--line)}
+.foot-in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:baseline}
+.foot a{color:var(--slate);text-decoration:none;font-size:.86rem}
+.foot a:hover{color:var(--ink)}
+
+/* ── lightbox ───────────────────────────────────────────────── */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(20,22,26,.94);display:none;
+    align-items:center;justify-content:center;padding:3vw;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:94vw;max-height:92vh;object-fit:contain;background:var(--white)}
+.lb-x{position:absolute;top:1rem;right:1.4rem;color:var(--bone);font-size:2rem;
+      background:none;border:0;cursor:pointer;line-height:1}
+
+/* ── reveal ─────────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(15px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── responsive ─────────────────────────────────────────────── */
+@media(max-width:940px){
+  .hero-grid,.plan,.ask-grid{grid-template-columns:1fr}
+  .hero-copy{order:-1}
+  .opts,.who,.steps,.dist{grid-template-columns:repeat(2,1fr)}
+  .incl-grid{grid-template-columns:repeat(3,1fr)}
+  .mats{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal figure.tall{grid-row:span 1;aspect-ratio:1}
+}
+@media(max-width:560px){
+  .opts,.who,.steps,.dist,.mats,.incl-grid{grid-template-columns:1fr}
+  .incl-grid{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr}
+  .nav-in{flex-wrap:wrap}
+  .mullion::before{left:30%}.mullion::after{left:70%}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .pane{opacity:1!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="#top">CASA San Bertario<span data-it="Affitti transitori · Cassino" data-en="Short lets · Cassino, Italy">Affitti transitori · Cassino</span></a>
+    <div class="nav-sp"></div>
+    <div class="langs" role="group" aria-label="Lingua / Language">
+      <button id="bIt" aria-pressed="true">IT</button>
+      <button id="bEn" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-sm" id="navWa" href="#ask" data-it="Scrivici" data-en="Get in touch">Scrivici</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero wrap" id="top">
+  <div class="hero-grid">
+    <div class="glazing">
+      <img src="https://i.ibb.co/Ps6Q1sJ9/Cucina.jpg" alt="" id="heroImg">
+      <div class="panes" aria-hidden="true">
+        <i class="pane"></i><i class="pane"></i><i class="pane"></i>
+        <i class="pane"></i><i class="pane"></i><i class="pane"></i>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow" data-it="Affitti transitori · da 1 a 18 mesi" data-en="Short-term lets · 1 to 18 months">Affitti transitori · da 1 a 18 mesi</p>
+      <h1 class="h-xl"><span data-it="Una casa vera," data-en="A real home,">Una casa vera,</span><br><em data-it="per il tempo che serve." data-en="for as long as you need.">per il tempo che serve.</em></h1>
+      <p class="lede" data-it="Nel centro di Cassino: due suite con bagno privato, arredate e pronte. Bollette, riscaldamento, Wi-Fi in fibra e spese condominiali sono già nel canone." data-en="In the centre of Cassino: two suites with private bathrooms, furnished and ready. Bills, heating, fibre Wi-Fi and building charges are already in the rent.">Nel centro di Cassino: due suite con bagno privato, arredate e pronte. Bollette, riscaldamento, Wi-Fi in fibra e spese condominiali sono già nel canone.</p>
+      <ul class="stay">
+        <li data-it="118 m² · 1° piano con ascensore" data-en="118 m² · 1st floor, with lift">118 m² · 1° piano con ascensore</li>
+        <li data-it="Tutto incluso" data-en="All bills included">Tutto incluso</li>
+        <li data-it="Da 550 €/mese" data-en="From €550/month">Da 550 €/mese</li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn" href="#options" data-it="Vedi le soluzioni" data-en="See the options">Vedi le soluzioni</a>
+        <a class="btn btn-ghost" href="#ask" data-it="Chiedi disponibilità" data-en="Check availability">Chiedi disponibilità</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><div class="mullion"></div></div>
+
+<!-- ══ OPZIONI ══ -->
+<section class="sec wrap" id="options">
+  <div class="sec-head rv">
+    <p class="eyebrow" data-it="Tre soluzioni" data-en="Three options">Tre soluzioni</p>
+    <h2 class="h-lg" data-it="Una camera o tutto l'appartamento" data-en="One room, or the whole apartment">Una camera o tutto l'appartamento</h2>
+    <p class="lede" data-it="Ogni camera ha il suo bagno en suite: si vive con la propria autonomia anche condividendo cucina e salone. Chi preferisce stare da solo può prendere l'intero appartamento." data-en="Each bedroom has its own en-suite bathroom, so you keep your privacy even while sharing the kitchen and living room. If you would rather not share at all, you can take the whole apartment.">Ogni camera ha il suo bagno en suite: si vive con la propria autonomia anche condividendo cucina e salone. Chi preferisce stare da solo può prendere l'intero appartamento.</p>
+  </div>
+
+  <div class="opts rv">
+    <article class="opt opt--suite">
+      <div class="opt-img"><img src="https://i.ibb.co/zhtdpP82/Bagno-Padronale2.jpg" alt="" loading="lazy"></div>
+      <div class="opt-body">
+        <p class="opt-tag" data-it="Suite padronale" data-en="Master suite">Suite padronale</p>
+        <p class="opt-price">€&nbsp;650<small data-it="/ mese, tutto incluso" data-en="/ month, all in">/ mese, tutto incluso</small></p>
+        <ul>
+          <li data-it="Camera matrimoniale, la più ampia" data-en="Double bedroom, the larger of the two">Camera matrimoniale, la più ampia</li>
+          <li data-it="Bagno privato con doccia e finestra" data-en="Private bathroom, walk-in shower, window">Bagno privato con doccia e finestra</li>
+          <li data-it="Aria condizionata e presa LAN" data-en="Air conditioning and wired LAN point">Aria condizionata e presa LAN</li>
+          <li data-it="Cucina, salone e lavanderia in comune" data-en="Shared kitchen, living room and utility">Cucina, salone e lavanderia in comune</li>
+        </ul>
+        <button class="btn btn-sage btn-sm ask-btn" data-opt="suite" data-it="Chiedi questa" data-en="Enquire">Chiedi questa</button>
+      </div>
+    </article>
+
+    <article class="opt opt--room">
+      <div class="opt-img"><img src="https://i.ibb.co/Ps3Ln87h/Bagno-Camera2.jpg" alt="" loading="lazy"></div>
+      <div class="opt-body">
+        <p class="opt-tag" data-it="Seconda camera" data-en="Second bedroom">Seconda camera</p>
+        <p class="opt-price">€&nbsp;550<small data-it="/ mese, tutto incluso" data-en="/ month, all in">/ mese, tutto incluso</small></p>
+        <ul>
+          <li data-it="Camera matrimoniale con vista sul verde" data-en="Double bedroom looking onto greenery">Camera matrimoniale con vista sul verde</li>
+          <li data-it="Bagno privato con doccia e finestra" data-en="Private bathroom, walk-in shower, window">Bagno privato con doccia e finestra</li>
+          <li data-it="Aria condizionata e presa LAN" data-en="Air conditioning and wired LAN point">Aria condizionata e presa LAN</li>
+          <li data-it="Cucina, salone e lavanderia in comune" data-en="Shared kitchen, living room and utility">Cucina, salone e lavanderia in comune</li>
+        </ul>
+        <button class="btn btn-sage btn-sm ask-btn" data-opt="camera" data-it="Chiedi questa" data-en="Enquire">Chiedi questa</button>
+      </div>
+    </article>
+
+    <article class="opt opt--flat">
+      <div class="opt-img"><img src="https://i.ibb.co/J0mY3Hx/Salotto.jpg" alt="" loading="lazy"></div>
+      <div class="opt-body">
+        <p class="opt-tag" data-it="Appartamento intero" data-en="Whole apartment">Appartamento intero</p>
+        <p class="opt-price">€&nbsp;1.200<small data-it="/ mese, tutto incluso" data-en="/ month, all in">/ mese, tutto incluso</small></p>
+        <ul>
+          <li data-it="118 m², nessuno spazio condiviso" data-en="118 m², nothing shared with anyone">118 m², nessuno spazio condiviso</li>
+          <li data-it="Due camere e due bagni" data-en="Two bedrooms and two bathrooms">Due camere e due bagni</li>
+          <li data-it="Cucina abitabile e salone" data-en="Eat-in kitchen and living room">Cucina abitabile e salone</li>
+          <li data-it="Due balconi e lavanderia" data-en="Two balconies and a utility room">Due balconi e lavanderia</li>
+        </ul>
+        <button class="btn btn-sage btn-sm ask-btn" data-opt="intero" data-it="Chiedi questo" data-en="Enquire">Chiedi questo</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ TUTTO INCLUSO ══ -->
+<section class="sec incl">
+  <div class="wrap">
+    <div class="sec-head rv" style="max-width:56ch">
+      <p class="eyebrow" data-it="Il canone" data-en="The rent">Il canone</p>
+      <h2 class="h-lg" style="color:var(--bone)" data-it="Una cifra sola, ogni mese" data-en="One figure, every month">Una cifra sola, ogni mese</h2>
+      <p class="lede" style="color:rgba(244,242,237,.86)" data-it="Niente conguagli a sorpresa, nessun contratto da intestare, nessuna coda agli sportelli. Quello che paghi è quello che vedi." data-en="No surprise adjustments, no utility accounts to open in your name, no queuing at an office. What you pay is what you see.">Niente conguagli a sorpresa, nessun contratto da intestare, nessuna coda agli sportelli. Quello che paghi è quello che vedi.</p>
+    </div>
+    <div class="incl-grid rv">
+      <div class="incl-item"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span data-it="Energia elettrica" data-en="Electricity">Energia elettrica</span></div>
+      <div class="incl-item"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 10.5A6 6 0 0 1 6 13.5C6 9.5 12 3 12 3z"/></svg><span data-it="Acqua" data-en="Water">Acqua</span></div>
+      <div class="incl-item"><svg viewBox="0 0 24 24"><path d="M12 22a6 6 0 0 0 6-6c0-4-4-5-4-9 0 0-4 2-4 6 0-2-1-3-1-3s-3 3-3 6a6 6 0 0 0 6 6z"/></svg><span data-it="Gas" data-en="Gas">Gas</span></div>
+      <div class="incl-item"><svg viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></svg><span data-it="Riscaldamento" data-en="Heating">Riscaldamento</span></div>
+      <div class="incl-item"><svg viewBox="0 0 24 24"><path d="M2.5 9a15 15 0 0 1 19 0M5.5 12.5a10 10 0 0 1 13 0M8.5 16a5.5 5.5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg><span data-it="Wi-Fi in fibra" data-en="Fibre Wi-Fi">Wi-Fi in fibra</span></div>
+      <div class="incl-item"><svg viewBox="0 0 24 24"><path d="M4 21V4h11v17M15 9h5v12M7.5 8h3M7.5 12h3M7.5 16h3"/></svg><span data-it="Spese condominiali" data-en="Building charges">Spese condominiali</span></div>
+    </div>
+    <p class="incl-note rv" data-it="Restano a carico dell'inquilino solo le spese personali: la spesa, il telefono, gli abbonamenti." data-en="You only pay for your own things on top: groceries, phone, subscriptions.">Restano a carico dell'inquilino solo le spese personali: la spesa, il telefono, gli abbonamenti.</p>
+  </div>
+</section>
+
+<!-- ══ MATERIALI ══ -->
+<section class="sec wrap">
+  <div class="sec-head rv">
+    <p class="eyebrow" data-it="Com'è fatta" data-en="How it is built">Com'è fatta</p>
+    <h2 class="h-lg" data-it="Ristrutturata da zero, con materiali scelti" data-en="Rebuilt from scratch, with chosen materials">Ristrutturata da zero, con materiali scelti</h2>
+    <p class="lede" data-it="Non è un appartamento arredato alla meglio per affittarlo. È stato ristrutturato integralmente nel 2024: impianti nuovi, superfici di pregio, nessuna scorciatoia." data-en="This is not a flat furnished on the cheap to be let out. It was completely rebuilt in 2024: new systems, high-grade surfaces, no shortcuts.">Non è un appartamento arredato alla meglio per affittarlo. È stato ristrutturato integralmente nel 2024: impianti nuovi, superfici di pregio, nessuna scorciatoia.</p>
+  </div>
+  <div class="mats rv">
+    <div class="mat"><span class="sw" style="background:linear-gradient(135deg,#F7F5F1 0%,#EDE7DD 40%,#C7A98A 55%,#F3F0EA 70%)"></span><div><h4 data-it="Gres effetto Calacatta" data-en="Calacatta-effect porcelain">Gres effetto Calacatta</h4><p data-it="Grande formato sulle pareti dei bagni e nella zona cucina." data-en="Large-format slabs in the bathrooms and the kitchen area.">Grande formato sulle pareti dei bagni e nella zona cucina.</p></div></div>
+    <div class="mat"><span class="sw" style="background:#171A1E"></span><div><h4 data-it="Vetrate in ferro" data-en="Steel-framed glazing">Vetrate in ferro</h4><p data-it="Partizioni stile atelier che portano luce senza chiudere gli spazi." data-en="Atelier-style partitions that carry light without closing the rooms off.">Partizioni stile atelier che portano luce senza chiudere gli spazi.</p></div></div>
+    <div class="mat"><span class="sw" style="background:#C39A6B"></span><div><h4 data-it="Pavimento effetto rovere" data-en="Oak-effect flooring">Pavimento effetto rovere</h4><p data-it="Posato in tutti gli ambienti, bagni compresi." data-en="Laid throughout, bathrooms included.">Posato in tutti gli ambienti, bagni compresi.</p></div></div>
+    <div class="mat"><span class="sw" style="background:#2A2D31"></span><div><h4 data-it="Rubinetteria nera opaca" data-en="Matt black brassware">Rubinetteria nera opaca</h4><p data-it="Miscelatori e docce a incasso, sanitari sospesi." data-en="Built-in mixers and showers, wall-hung sanitaryware.">Miscelatori e docce a incasso, sanitari sospesi.</p></div></div>
+    <div class="mat"><span class="sw" style="background:#7E8F79"></span><div><h4 data-it="Impianti rifatti a norma" data-en="New certified systems">Impianti rifatti a norma</h4><p data-it="Elettrico e idraulico nuovi, illuminazione LED, clima Wi-Fi." data-en="New wiring and plumbing, LED lighting, Wi-Fi climate control.">Elettrico e idraulico nuovi, illuminazione LED, clima Wi-Fi.</p></div></div>
+    <div class="mat"><span class="sw" style="background:#B98C74"></span><div><h4 data-it="Edificio in classe B" data-en="Building rated class B">Edificio in classe B</h4><p data-it="Cappotto, triplo vetro e fotovoltaico: sta caldo e consuma poco." data-en="Insulation, triple glazing and solar: warm, and cheap to run.">Cappotto, triplo vetro e fotovoltaico: sta caldo e consuma poco.</p></div></div>
+  </div>
+</section>
+
+<div class="wrap"><div class="mullion"></div></div>
+
+<!-- ══ GALLERIA ══ -->
+<section class="sec wrap">
+  <div class="sec-head rv">
+    <p class="eyebrow" data-it="Gli spazi" data-en="The rooms">Gli spazi</p>
+    <h2 class="h-lg" data-it="Guarda com'è" data-en="Take a look">Guarda com'è</h2>
+  </div>
+  <div class="gal rv" id="gal">
+    <figure class="tall"><img src="https://i.ibb.co/J0mY3Hx/Salotto.jpg" alt="" loading="lazy"><figcaption data-it="Salone" data-en="Living room">Salone</figcaption></figure>
+    <figure><img src="https://i.ibb.co/Ps6Q1sJ9/Cucina.jpg" alt="" loading="lazy"><figcaption data-it="Cucina" data-en="Kitchen">Cucina</figcaption></figure>
+    <figure><img src="https://i.ibb.co/zhtdpP82/Bagno-Padronale2.jpg" alt="" loading="lazy"><figcaption data-it="Bagno suite" data-en="Suite bathroom">Bagno suite</figcaption></figure>
+    <figure><img src="https://i.ibb.co/Ps3Ln87h/Bagno-Camera2.jpg" alt="" loading="lazy"><figcaption data-it="Secondo bagno" data-en="Second bathroom">Secondo bagno</figcaption></figure>
+    <figure><img src="https://i.ibb.co/ymKKkDmm/Camera-Letto-Matrimoniale.jpg" alt="" loading="lazy"><figcaption data-it="Suite padronale" data-en="Master suite">Suite padronale</figcaption></figure>
+    <figure><img src="https://i.ibb.co/prnyf83K/Camera-Letto-Verde.jpg" alt="" loading="lazy"><figcaption data-it="Seconda camera" data-en="Second bedroom">Seconda camera</figcaption></figure>
+    <figure><img src="https://i.ibb.co/rfTw2smw/Corridoio.jpg" alt="" loading="lazy"><figcaption data-it="Ingresso" data-en="Entrance">Ingresso</figcaption></figure>
+  </div>
+</section>
+
+<!-- ══ PLANIMETRIA ══ -->
+<section class="sec wrap">
+  <div class="plan">
+    <div class="rv">
+      <div class="sec-head">
+        <p class="eyebrow" data-it="Planimetria" data-en="Floor plan">Planimetria</p>
+        <h2 class="h-lg" data-it="Come sono distribuiti gli spazi" data-en="How the space is laid out">Come sono distribuiti gli spazi</h2>
+      </div>
+      <div class="plan-img" data-zoom="https://i.ibb.co/pv4nk1Nr/Pianta-EX-POST.png">
+        <img src="https://i.ibb.co/pv4nk1Nr/Pianta-EX-POST.png" alt="Planimetria del piano primo">
+      </div>
+      <p class="tiny" style="margin-top:.6rem" data-it="Clicca per ingrandire · quote in metri, altezza interna 2,75 m" data-en="Click to enlarge · dimensions in metres, ceiling height 2.75 m">Clicca per ingrandire · quote in metri, altezza interna 2,75 m</p>
+    </div>
+    <div class="rv">
+      <ul class="specs">
+        <li><span data-it="Superficie" data-en="Floor area">Superficie</span><span class="num">118 m²</span></li>
+        <li><span data-it="Camere" data-en="Bedrooms">Camere</span><span class="num">2</span></li>
+        <li><span data-it="Bagni" data-en="Bathrooms">Bagni</span><span class="num" data-it="2 · en suite" data-en="2 · en suite">2 · en suite</span></li>
+        <li><span data-it="Altezza interna" data-en="Ceiling height">Altezza interna</span><span class="num">2,75 m</span></li>
+        <li><span data-it="Piano" data-en="Floor">Piano</span><span class="num" data-it="1° con ascensore" data-en="1st, with lift">1° con ascensore</span></li>
+        <li><span data-it="Balconi" data-en="Balconies">Balconi</span><span class="num">2</span></li>
+        <li><span data-it="Classe edificio" data-en="Building rating">Classe edificio</span><span class="num">B</span></li>
+        <li><span data-it="Riscaldamento" data-en="Heating">Riscaldamento</span><span class="num" data-it="Contabilizzato" data-en="Individually metered">Contabilizzato</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PER CHI ══ -->
+<section class="sec wrap">
+  <div class="sec-head rv">
+    <p class="eyebrow" data-it="Per chi" data-en="Who it suits">Per chi</p>
+    <h2 class="h-lg" data-it="Chi ci vive di solito" data-en="Who usually stays here">Chi ci vive di solito</h2>
+  </div>
+  <div class="who rv">
+    <article><h4 data-it="Studenti fuori sede" data-en="University students">Studenti fuori sede</h4><p data-it="L'Università di Cassino è a dieci minuti. Contratto per l'anno accademico, senza vincoli lunghi." data-en="The University of Cassino is ten minutes away. A tenancy for the academic year, with no long lock-in.">L'Università di Cassino è a dieci minuti. Contratto per l'anno accademico, senza vincoli lunghi.</p></article>
+    <article><h4 data-it="Erasmus e ricercatori" data-en="Erasmus and researchers">Erasmus e ricercatori</h4><p data-it="Anche solo per un semestre. Si può concordare tutto a distanza, prima di arrivare in Italia." data-en="A single semester works. Everything can be arranged remotely, before you travel to Italy.">Anche solo per un semestre. Si può concordare tutto a distanza, prima di arrivare in Italia.</p></article>
+    <article><h4 data-it="Docenti in visita" data-en="Visiting academics">Docenti in visita</h4><p data-it="Silenzio, una scrivania, connessione via cavo. Uno spazio adatto anche a lavorare." data-en="Quiet, a desk, a wired connection. A place you can actually work in.">Silenzio, una scrivania, connessione via cavo. Uno spazio adatto anche a lavorare.</p></article>
+    <article><h4 data-it="Manager e tecnici in trasferta" data-en="Managers and engineers on assignment">Manager e tecnici in trasferta</h4><p data-it="Il distretto industriale di Frosinone è a portata. Fattura intestabile all'azienda." data-en="The Frosinone industrial district is close by. Invoicing to your company is possible.">Il distretto industriale di Frosinone è a portata. Fattura intestabile all'azienda.</p></article>
+  </div>
+</section>
+
+<!-- ══ DISTANZE ══ -->
+<section class="sec wrap" style="padding-top:0">
+  <div class="sec-head rv">
+    <p class="eyebrow" data-it="Intorno" data-en="Nearby">Intorno</p>
+    <h2 class="h-lg" data-it="Tutto a portata" data-en="Everything close">Tutto a portata</h2>
+  </div>
+  <div class="dist rv">
+    <div><b class="num">5<span style="font-size:.55em"> min</span></b><span data-it="Stazione ferroviaria" data-en="Railway station">Stazione ferroviaria</span></div>
+    <div><b class="num">10<span style="font-size:.55em"> min</span></b><span data-it="Università di Cassino" data-en="University of Cassino">Università di Cassino</span></div>
+    <div><b class="num">1<span style="font-size:.55em">h 30</span></b><span data-it="Roma e Napoli in treno" data-en="Rome and Naples by train">Roma e Napoli in treno</span></div>
+    <div><b class="num" data-it="A piedi" data-en="On foot">A piedi</b><span data-it="Negozi, bar, farmacia" data-en="Shops, cafés, pharmacy">Negozi, bar, farmacia</span></div>
+  </div>
+</section>
+
+<div class="wrap"><div class="mullion"></div></div>
+
+<!-- ══ COME FUNZIONA ══ -->
+<section class="sec wrap">
+  <div class="sec-head rv">
+    <p class="eyebrow" data-it="Come funziona" data-en="How it works">Come funziona</p>
+    <h2 class="h-lg" data-it="Dalla richiesta alle chiavi" data-en="From first message to keys">Dalla richiesta alle chiavi</h2>
+  </div>
+  <div class="steps rv">
+    <div class="step"><span class="num">01</span><h4 data-it="Scrivici" data-en="Send a message">Scrivici</h4><p data-it="Dicci quale soluzione ti interessa e da quando. Rispondiamo entro un giorno." data-en="Tell us which option you want and from when. We reply within a day.">Dicci quale soluzione ti interessa e da quando. Rispondiamo entro un giorno.</p></div>
+    <div class="step"><span class="num">02</span><h4 data-it="Visita o videochiamata" data-en="Visit or video call">Visita o videochiamata</h4><p data-it="Vieni a vederla, oppure ti mostriamo tutto in videochiamata se sei all'estero." data-en="Come and see it, or we walk you through it on a video call if you are abroad.">Vieni a vederla, oppure ti mostriamo tutto in videochiamata se sei all'estero.</p></div>
+    <div class="step"><span class="num">03</span><h4 data-it="Contratto" data-en="Tenancy agreement">Contratto</h4><p data-it="Locazione transitoria registrata, con la durata che ti serve. Serve un documento e la causale." data-en="A registered short-term tenancy for the length you need. You will need ID and a reason for the stay.">Locazione transitoria registrata, con la durata che ti serve. Serve un documento e la causale.</p></div>
+    <div class="step"><span class="num">04</span><h4 data-it="Chiavi" data-en="Keys">Chiavi</h4><p data-it="Entri e trovi tutto pronto: letto fatto, cucina attrezzata, Wi-Fi attivo." data-en="You move in and it is all ready: bed made, kitchen equipped, Wi-Fi live.">Entri e trovi tutto pronto: letto fatto, cucina attrezzata, Wi-Fi attivo.</p></div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="sec wrap">
+  <div class="sec-head rv">
+    <p class="eyebrow" data-it="Domande frequenti" data-en="Common questions">Domande frequenti</p>
+    <h2 class="h-lg" data-it="Quello che ci chiedono sempre" data-en="What people always ask">Quello che ci chiedono sempre</h2>
+  </div>
+  <div class="faq rv">
+    <details><summary data-it="Qual è la permanenza minima?" data-en="What is the minimum stay?">Qual è la permanenza minima?</summary><p data-it="Un mese. La formula transitoria arriva fino a diciotto mesi, quindi copre bene sia un semestre Erasmus sia un intero anno accademico o una commessa di lavoro lunga." data-en="One month. The short-term formula runs up to eighteen months, so it covers an Erasmus semester, a full academic year or a long work assignment equally well.">Un mese. La formula transitoria arriva fino a diciotto mesi, quindi copre bene sia un semestre Erasmus sia un intero anno accademico o una commessa di lavoro lunga.</p></details>
+    <details><summary data-it="Cosa comprende davvero “tutto incluso”?" data-en="What does “all included” actually cover?">Cosa comprende davvero “tutto incluso”?</summary><p data-it="Energia elettrica, acqua, gas, riscaldamento, Wi-Fi in fibra e spese condominiali. Non devi intestarti nessuna utenza né anticipare depositi ai fornitori." data-en="Electricity, water, gas, heating, fibre Wi-Fi and the building service charge. You do not open any utility account in your own name or pay deposits to suppliers.">Energia elettrica, acqua, gas, riscaldamento, Wi-Fi in fibra e spese condominiali. Non devi intestarti nessuna utenza né anticipare depositi ai fornitori.</p></details>
+    <details><summary data-it="Se prendo una camera, con chi condivido?" data-en="If I take one room, who do I share with?">Se prendo una camera, con chi condivido?</summary><p data-it="Al massimo con un'altra persona, che occupa l'altra camera. Ognuno ha il proprio bagno privato: si condividono solo cucina, salone e lavanderia. Ti diciamo sempre in anticipo chi c'è già." data-en="With one other person at most, in the other bedroom. Each of you has a private bathroom; only the kitchen, living room and utility are shared. We always tell you in advance who is already there.">Al massimo con un'altra persona, che occupa l'altra camera. Ognuno ha il proprio bagno privato: si condividono solo cucina, salone e lavanderia. Ti diciamo sempre in anticipo chi c'è già.</p></details>
+    <details><summary data-it="L'appartamento è arredato?" data-en="Is the apartment furnished?">L'appartamento è arredato?</summary><p data-it="Sì, completamente. Letti, armadi, cucina attrezzata, tavolo e sedute, lavatrice. Porti i tuoi effetti personali e basta." data-en="Yes, completely. Beds, wardrobes, fitted kitchen, table and seating, washing machine. You bring your personal belongings and nothing else.">Sì, completamente. Letti, armadi, cucina attrezzata, tavolo e sedute, lavatrice. Porti i tuoi effetti personali e basta.</p></details>
+    <details><summary data-it="Posso organizzare tutto dall'estero?" data-en="Can I arrange everything from abroad?">Posso organizzare tutto dall'estero?</summary><p data-it="Sì. Facciamo la visita in videochiamata e il contratto si firma a distanza. Parliamo italiano e inglese." data-en="Yes. We do the viewing by video call and the tenancy can be signed remotely. We speak Italian and English.">Sì. Facciamo la visita in videochiamata e il contratto si firma a distanza. Parliamo italiano e inglese.</p></details>
+    <details><summary data-it="Che documenti servono?" data-en="What documents do I need?">Che documenti servono?</summary><p data-it="Un documento d'identità, il codice fiscale e un giustificativo della causale: iscrizione universitaria, lettera dell'ateneo o dell'azienda. Ti guidiamo noi." data-en="ID, an Italian tax code, and something that evidences the reason for the stay: university enrolment, or a letter from your university or employer. We guide you through it.">Un documento d'identità, il codice fiscale e un giustificativo della causale: iscrizione universitaria, lettera dell'ateneo o dell'azienda. Ti guidiamo noi.</p></details>
+    <details><summary data-it="Serve un deposito cauzionale?" data-en="Is a deposit required?">Serve un deposito cauzionale?</summary><p data-it="Sì, come da prassi per le locazioni transitorie. L'importo lo concordiamo in fase di richiesta e viene restituito a fine locazione." data-en="Yes, as is standard for short-term tenancies. We agree the amount when you enquire, and it is returned at the end of the tenancy.">Sì, come da prassi per le locazioni transitorie. L'importo lo concordiamo in fase di richiesta e viene restituito a fine locazione.</p></details>
+    <details><summary data-it="L'azienda può intestarsi il contratto?" data-en="Can my company hold the contract?">L'azienda può intestarsi il contratto?</summary><p data-it="Sì. Per le trasferte di lavoro possiamo intestare contratto e fattura direttamente all'azienda." data-en="Yes. For work assignments we can put both the tenancy and the invoice in the company's name.">Sì. Per le trasferte di lavoro possiamo intestare contratto e fattura direttamente all'azienda.</p></details>
+  </div>
+</section>
+
+<!-- ══ RICHIESTA ══ -->
+<section class="sec ask" id="ask">
+  <div class="wrap ask-grid">
+    <div class="rv">
+      <p class="eyebrow" data-it="Parliamone" data-en="Let's talk">Parliamone</p>
+      <h2 class="h-lg" style="color:#fff;margin:.5rem 0 .8rem" data-it="Dicci quando ti serve" data-en="Tell us when you need it">Dicci quando ti serve</h2>
+      <p class="lede" style="color:rgba(255,255,255,.92)" data-it="Rispondiamo entro un giorno lavorativo, in italiano o in inglese. Se sei all'estero possiamo fissare una videochiamata al tuo fuso orario." data-en="We reply within one working day, in Italian or English. If you are abroad we can set up a video call at a time that suits your time zone.">Rispondiamo entro un giorno lavorativo, in italiano o in inglese. Se sei all'estero possiamo fissare una videochiamata al tuo fuso orario.</p>
+      <div class="direct">
+        <a id="dWa" href="#"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span>WhatsApp · +39 379 1 900 500</span></a>
+        <a id="dTel" href="#"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>+39 379 1 900 500</span></a>
+        <a id="dMail" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="2"/><path d="M2.5 6l9.5 7 9.5-7"/></svg><span>a.mentella@gmail.com</span></a>
+      </div>
+    </div>
+
+    <div class="form rv">
+      <div class="field">
+        <label for="fOpt" data-it="Cosa ti interessa" data-en="What you are after">Cosa ti interessa</label>
+        <select id="fOpt">
+          <option value="suite" data-it="Suite padronale — 650 €/mese" data-en="Master suite — €650/month">Suite padronale — 650 €/mese</option>
+          <option value="camera" data-it="Seconda camera — 550 €/mese" data-en="Second bedroom — €550/month">Seconda camera — 550 €/mese</option>
+          <option value="intero" data-it="Appartamento intero — 1.200 €/mese" data-en="Whole apartment — €1,200/month">Appartamento intero — 1.200 €/mese</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="fFrom" data-it="Da quando" data-en="From">Da quando</label>
+          <input type="month" id="fFrom">
+        </div>
+        <div class="field">
+          <label for="fMonths" data-it="Per quanti mesi" data-en="For how many months">Per quanti mesi</label>
+          <input type="number" id="fMonths" min="1" max="18" placeholder="6">
+        </div>
+      </div>
+      <div class="field">
+        <label for="fWho" data-it="Chi sei" data-en="About you">Chi sei</label>
+        <select id="fWho">
+          <option value="studente" data-it="Studente" data-en="Student">Studente</option>
+          <option value="erasmus" data-it="Erasmus / ricercatore" data-en="Erasmus / researcher">Erasmus / ricercatore</option>
+          <option value="docente" data-it="Docente in visita" data-en="Visiting academic">Docente in visita</option>
+          <option value="lavoro" data-it="Trasferta di lavoro" data-en="Work assignment">Trasferta di lavoro</option>
+          <option value="altro" data-it="Altro" data-en="Other">Altro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fName" data-it="Nome" data-en="Name">Nome</label>
+        <input type="text" id="fName" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="fMsg" data-it="Qualcosa che dovremmo sapere" data-en="Anything we should know">Qualcosa che dovremmo sapere</label>
+        <textarea id="fMsg"></textarea>
+      </div>
+      <div class="send">
+        <button class="btn" id="sendWa" data-it="Invia su WhatsApp" data-en="Send on WhatsApp">Invia su WhatsApp</button>
+        <button class="btn btn-ghost" id="sendMail" data-it="Invia per email" data-en="Send by email">Invia per email</button>
+      </div>
+      <p class="form-note" data-it="Nessun dato viene salvato su questo sito: i pulsanti aprono WhatsApp o il tuo programma di posta con il messaggio già scritto." data-en="Nothing is stored on this site: the buttons open WhatsApp or your mail app with the message already written for you.">Nessun dato viene salvato su questo sito: i pulsanti aprono WhatsApp o il tuo programma di posta con il messaggio già scritto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="tiny" data-it="CASA San Bertario · Via San Bertario 28, Cassino (FR) · Locazione transitoria ai sensi della L. 431/1998" data-en="CASA San Bertario · Via San Bertario 28, Cassino (FR), Italy · Short-term tenancy under Italian Law 431/1998">CASA San Bertario · Via San Bertario 28, Cassino (FR) · Locazione transitoria ai sensi della L. 431/1998</p>
+    <a href="index.html" data-it="L'appartamento è anche in vendita →" data-en="The apartment is also for sale →">L'appartamento è anche in vendita →</a>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><button class="lb-x" id="lbX" aria-label="Chiudi">×</button><img id="lbImg" src="" alt=""></div>
+
+<script>
+(function(){
+  "use strict";
+  var PHONE = "+39 379 1 900 500";
+  var MAIL  = "a.mentella@gmail.com";
+  var intl  = PHONE.replace(/[^\d+]/g,"");
+  var wa    = intl.replace(/^\+/,"");
+
+  /* ── lingua ─────────────────────────────────────────────── */
+  var lang = (new URLSearchParams(location.search).get("lang") === "en") ? "en" : "it";
+
+  function applyLang(l){
+    lang = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll("[data-it]").forEach(function(el){
+      var v = el.getAttribute("data-" + l);
+      if(v !== null) el.textContent = v;
+    });
+    document.getElementById("bIt").setAttribute("aria-pressed", l === "it");
+    document.getElementById("bEn").setAttribute("aria-pressed", l === "en");
+    var u = new URL(location);
+    if(l === "en") u.searchParams.set("lang","en"); else u.searchParams.delete("lang");
+    history.replaceState(null,"",u);
+  }
+  document.getElementById("bIt").addEventListener("click",function(){applyLang("it")});
+  document.getElementById("bEn").addEventListener("click",function(){applyLang("en")});
+
+  /* ── contatti diretti ───────────────────────────────────── */
+  var hello = { it:"Buongiorno, scrivo per l'affitto di CASA San Bertario a Cassino.",
+                en:"Hello, I'm writing about renting CASA San Bertario in Cassino." };
+  function wireDirect(){
+    document.getElementById("dWa").href  = "https://wa.me/"+wa+"?text="+encodeURIComponent(hello[lang]);
+    document.getElementById("dTel").href = "tel:"+intl;
+    document.getElementById("dMail").href= "mailto:"+MAIL+"?subject="+encodeURIComponent(
+      lang==="en" ? "CASA San Bertario — rental enquiry" : "CASA San Bertario — richiesta affitto");
+    document.getElementById("navWa").href = "#ask";
+  }
+
+  /* ── composizione messaggio ─────────────────────────────── */
+  var OPTLBL = {
+    it:{suite:"Suite padronale (650 €/mese)", camera:"Seconda camera (550 €/mese)", intero:"Appartamento intero (1.200 €/mese)"},
+    en:{suite:"Master suite (€650/month)",     camera:"Second bedroom (€550/month)", intero:"Whole apartment (€1,200/month)"}
+  };
+  var WHOLBL = {
+    it:{studente:"Studente", erasmus:"Erasmus / ricercatore", docente:"Docente in visita", lavoro:"Trasferta di lavoro", altro:"Altro"},
+    en:{studente:"Student",  erasmus:"Erasmus / researcher",  docente:"Visiting academic", lavoro:"Work assignment",   altro:"Other"}
+  };
+  function compose(){
+    var g = function(id){ return document.getElementById(id).value.trim(); };
+    var opt = document.getElementById("fOpt").value;
+    var who = document.getElementById("fWho").value;
+    var L = lang === "en";
+    var p = [];
+    p.push(L ? "Hello, I'm writing about CASA San Bertario in Cassino."
+             : "Buongiorno, scrivo per CASA San Bertario a Cassino.");
+    p.push("");
+    p.push((L?"Option: ":"Soluzione: ") + OPTLBL[lang][opt]);
+    if(g("fFrom"))   p.push((L?"From: ":"Da: ") + g("fFrom"));
+    if(g("fMonths")) p.push((L?"Duration: ":"Durata: ") + g("fMonths") + (L?" months":" mesi"));
+    p.push((L?"Profile: ":"Profilo: ") + WHOLBL[lang][who]);
+    if(g("fName"))   p.push((L?"Name: ":"Nome: ") + g("fName"));
+    if(g("fMsg"))    { p.push(""); p.push(g("fMsg")); }
+    return p.join("\n");
+  }
+  document.getElementById("sendWa").addEventListener("click",function(){
+    window.open("https://wa.me/"+wa+"?text="+encodeURIComponent(compose()),"_blank","noopener");
+  });
+  document.getElementById("sendMail").addEventListener("click",function(){
+    var s = lang==="en" ? "CASA San Bertario — rental enquiry" : "CASA San Bertario — richiesta affitto";
+    location.href = "mailto:"+MAIL+"?subject="+encodeURIComponent(s)+"&body="+encodeURIComponent(compose());
+  });
+
+  /* ── i pulsanti delle schede preselezionano l'opzione ───── */
+  document.querySelectorAll(".ask-btn").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.getElementById("fOpt").value = b.getAttribute("data-opt");
+      document.getElementById("ask").scrollIntoView({behavior:"smooth"});
+      setTimeout(function(){ document.getElementById("fFrom").focus({preventScroll:true}); },600);
+    });
+  });
+
+  /* ── lightbox ───────────────────────────────────────────── */
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+  function openLb(src){ lbImg.src = src; lb.classList.add("on"); }
+  document.querySelectorAll("#gal figure").forEach(function(f){
+    f.addEventListener("click",function(){ openLb(f.querySelector("img").src); });
+  });
+  document.querySelectorAll("[data-zoom]").forEach(function(el){
+    el.addEventListener("click",function(){ openLb(el.getAttribute("data-zoom")); });
+  });
+  lb.addEventListener("click",function(){ lb.classList.remove("on"); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") lb.classList.remove("on"); });
+
+  /* ── reveal + apertura vetrata ──────────────────────────── */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{threshold:.08,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+
+  var panes = document.querySelectorAll(".pane");
+  if(reduce){ panes.forEach(function(p){ p.style.opacity = 1; }); }
+  else {
+    panes.forEach(function(p,i){
+      p.style.transition = "opacity .75s cubic-bezier(.2,.7,.3,1)";
+      setTimeout(function(){ p.style.opacity = 1; }, 220 + i*95);
+    });
+  }
+
+  applyLang(lang);
+  wireDirect();
+  document.getElementById("bIt").addEventListener("click",wireDirect);
+  document.getElementById("bEn").addEventListener("click",wireDirect);
+})();
+</script>
+</body>
+</html>
